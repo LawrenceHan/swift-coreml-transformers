@@ -769,7 +769,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2EADP68M95;
+				DEVELOPMENT_TEAM = 2L4985KKX7;
 				INFOPLIST_FILE = CoreMLBert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -787,7 +787,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2EADP68M95;
+				DEVELOPMENT_TEAM = 2L4985KKX7;
 				INFOPLIST_FILE = CoreMLBert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

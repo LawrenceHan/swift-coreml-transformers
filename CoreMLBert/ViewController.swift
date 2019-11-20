@@ -34,7 +34,11 @@ class ViewController: UIViewController {
         answerBtn.addTarget(self, action: #selector(answer), for: .touchUpInside)
         
         subjectField.flashScrollIndicators()
+        subjectField.keyboardDismissMode = .onDrag
         questionField.flashScrollIndicators()
+        questionField.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(moveView(noti:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     @objc func shuffle() {
@@ -70,5 +74,40 @@ class ViewController: UIViewController {
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
     }
+    
+    @objc func moveView(noti: Notification) {
+        guard let info = noti.userInfo,
+            let value = info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
+            questionField.isFirstResponder else {
+                return
+        }
+        
+        let offsetY = value.cgRectValue.origin.y
+        if offsetY < view.bounds.height {
+            UIView.animate(withDuration: 0.25) {
+                let transform = self.questionField.transform.translatedBy(x: 0, y: -value.cgRectValue.height)
+                self.questionField.transform = transform
+            }
+            subjectField.isUserInteractionEnabled = false
+        } else {
+            UIView.animate(withDuration: 0.25) {
+                self.questionField.transform = .identity
+            }
+            subjectField.isUserInteractionEnabled = true
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
+extension ViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+}
