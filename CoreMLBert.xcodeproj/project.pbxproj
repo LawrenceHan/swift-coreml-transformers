@@ -112,7 +112,7 @@
 		79908C18234EAB5300D0FE5B /* distilbert-squad-384_FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "distilbert-squad-384_FP16.mlmodel"; sourceTree = "<group>"; };
 		799F42E1234CDF70006CDB03 /* distilgpt2-64-6.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "distilgpt2-64-6.mlmodel"; sourceTree = "<group>"; };
 		79D94AD5234CE4830033EA7D /* gpt2-64-12.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "gpt2-64-12.mlmodel"; sourceTree = "<group>"; };
-		79F2CC5822C50078009F8551 /* CoreMLBert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreMLBert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79F2CC5822C50078009F8551 /* Bernard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bernard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F2CC5B22C50078009F8551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79F2CC5D22C50078009F8551 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		79F2CC5F22C50078009F8551 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 		79F2CC5922C50078009F8551 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				79F2CC5822C50078009F8551 /* CoreMLBert.app */,
+				79F2CC5822C50078009F8551 /* Bernard.app */,
 				79F2CC6E22C5007B009F8551 /* CoreMLBertTests.xctest */,
 				796DF54D22E1026700140C02 /* CoreMLGPT2.app */,
 				796DF56222E1026800140C02 /* CoreMLGPT2Tests.xctest */,
@@ -332,7 +332,7 @@
 			);
 			name = CoreMLBert;
 			productName = CoreMLBert;
-			productReference = 79F2CC5822C50078009F8551 /* CoreMLBert.app */;
+			productReference = 79F2CC5822C50078009F8551 /* Bernard.app */;
 			productType = "com.apple.product-type.application";
 		};
 		79F2CC6D22C5007B009F8551 /* CoreMLBertTests */ = {
@@ -771,12 +771,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2L4985KKX7;
 				INFOPLIST_FILE = CoreMLBert/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ai.katia.Katia.CoreMLBert;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Bernard;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -789,12 +790,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2L4985KKX7;
 				INFOPLIST_FILE = CoreMLBert/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ai.katia.Katia.CoreMLBert;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Bernard;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         
         subjectField.flashScrollIndicators()
         subjectField.keyboardDismissMode = .onDrag
+        subjectField.delegate = self
         questionField.flashScrollIndicators()
         questionField.delegate = self
         
@@ -73,6 +74,17 @@ class ViewController: UIViewController {
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
+        
+        let alert = UIAlertController(title: "Answer:", message: text, preferredStyle: .alert)
+        alert.addAction(.init(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+        
+        subjectField.textStorage.removeAttribute(.backgroundColor, range: .init(location: 0, length: subjectField.text.count))
+        
+        guard let range = subjectField.text.range(of: text) else { return }
+        let nsrange = NSRange(range, in: subjectField.text)
+        subjectField.scrollRangeToVisible(nsrange)
+        subjectField.textStorage.addAttribute(.backgroundColor, value: UIColor.systemYellow, range: nsrange)
     }
     
     @objc func moveView(noti: Notification) {
