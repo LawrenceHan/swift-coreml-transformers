@@ -68,6 +68,9 @@
 		79F2CCA022C666C7009F8551 /* question_tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = 79F2CC9F22C666C7009F8551 /* question_tokens.json */; };
 		79F2CCA222C6717E009F8551 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2CCA122C6717D009F8551 /* LoaderView.swift */; };
 		79F7060E22EA0CA900C4432C /* BERTSQUADFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 79F2CC9022C5590C009F8551 /* BERTSQUADFP16.mlmodel */; };
+		975CE5A423B1F66F00454CC8 /* qa.json in Resources */ = {isa = PBXBuildFile; fileRef = 975CE5A323B1F66F00454CC8 /* qa.json */; };
+		975CE5A623B1F6F100454CC8 /* QAObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975CE5A523B1F6F100454CC8 /* QAObject.swift */; };
+		975CE5A823B1FE8900454CC8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975CE5A723B1FE8900454CC8 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +139,9 @@
 		79F2CC9D22C57825009F8551 /* BertForQATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BertForQATests.swift; sourceTree = "<group>"; };
 		79F2CC9F22C666C7009F8551 /* question_tokens.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = question_tokens.json; sourceTree = "<group>"; };
 		79F2CCA122C6717D009F8551 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		975CE5A323B1F66F00454CC8 /* qa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = qa.json; sourceTree = "<group>"; };
+		975CE5A523B1F6F100454CC8 /* QAObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAObject.swift; sourceTree = "<group>"; };
+		975CE5A723B1FE8900454CC8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,7 @@
 		7944CDBD22C501AF000C0B1E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				975CE5A323B1F66F00454CC8 /* qa.json */,
 				79D94AD5234CE4830033EA7D /* gpt2-64-12.mlmodel */,
 				799F42E1234CDF70006CDB03 /* distilgpt2-64-6.mlmodel */,
 				7944CDBE22C501D6000C0B1E /* dev-v1.1.json */,
@@ -249,6 +256,7 @@
 				79F2CC6622C5007B009F8551 /* LaunchScreen.storyboard */,
 				79F2CC6922C5007B009F8551 /* Info.plist */,
 				79F2CCA122C6717D009F8551 /* LoaderView.swift */,
+				975CE5A723B1FE8900454CC8 /* TableViewController.swift */,
 			);
 			path = CoreMLBert;
 			sourceTree = "<group>";
@@ -276,6 +284,7 @@
 				796DF50F22E0EB1D00140C02 /* GPT2Tokenizer.swift */,
 				796DF51922E0FF7A00140C02 /* GPT2ByteEncoder.swift */,
 				796DF58622E2727000140C02 /* GPT2.swift */,
+				975CE5A523B1F6F100454CC8 /* QAObject.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -433,6 +442,7 @@
 				79F2CC6522C5007B009F8551 /* Assets.xcassets in Resources */,
 				79F2CC6322C50078009F8551 /* Main.storyboard in Resources */,
 				7944CDBF22C501D6000C0B1E /* dev-v1.1.json in Resources */,
+				975CE5A423B1F66F00454CC8 /* qa.json in Resources */,
 				796DF51622E0EE7800140C02 /* gpt2-vocab.json in Resources */,
 				79F2CCA022C666C7009F8551 /* question_tokens.json in Resources */,
 			);
@@ -487,6 +497,8 @@
 			files = (
 				79F2CC9A22C57132009F8551 /* MLMultiArray+Utils.swift in Sources */,
 				79F2CCA222C6717E009F8551 /* LoaderView.swift in Sources */,
+				975CE5A823B1FE8900454CC8 /* TableViewController.swift in Sources */,
+				975CE5A623B1F6F100454CC8 /* QAObject.swift in Sources */,
 				79F2CC6022C50078009F8551 /* ViewController.swift in Sources */,
 				79F2CC8122C5041C009F8551 /* SquadDataset.swift in Sources */,
 				796DF51A22E0FF7A00140C02 /* GPT2ByteEncoder.swift in Sources */,

@@ -68,6 +68,9 @@ class BertForQuestionAnswering {
             let start = Math.argmax32(output.start_scores).0
             let end = Math.argmax32(output.end_scores).0
             
+            if start > end {
+                return (start: start, end: end, tokens: [], answer: "None")
+            }
             let tokenIds = Array(
                 MLMultiArray.toIntArray(input.input_ids)[start...end]
             )

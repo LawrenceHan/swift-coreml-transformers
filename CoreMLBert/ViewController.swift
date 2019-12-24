@@ -11,6 +11,7 @@ import AVFoundation
 
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var shuffleBtn: UIButton!
     @IBOutlet weak var subjectField: UITextView!
     @IBOutlet weak var questionField: UITextView!
@@ -18,8 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var answerLabel: UILabel!
     let loaderView = LoaderView()
     
-    let m = BertForQuestionAnswering(.distilled)
-    
+    var m: BertForQuestionAnswering!
+    var subjects: [String] = []
+    var questions: [String] = []
+    var currentIndex = -1
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,12 +46,19 @@ class ViewController: UIViewController {
     }
     
     @objc func shuffle() {
+        subjectField.scrollRangeToVisible(.init(location: 0, length: 0))
         answerLabel.text = ""
-        guard let example = Squad.examples.randomElement() else {
-            return
+        
+        guard subjects.isEmpty == false,
+            questions.isEmpty == false else {
+                return
         }
-        subjectField.text = example.context
-        questionField.text = example.question
+        currentIndex += 1
+        if currentIndex >= subjects.count {
+            currentIndex = 0
+        }
+        subjectField.text = subjects[currentIndex]
+        questionField.text = questions[currentIndex]
     }
     
     @objc func answer() {
@@ -62,7 +72,7 @@ class ViewController: UIViewController {
             let prediction = self.m.predict(question: question, context: context)
             print("🎉", prediction)
             DispatchQueue.main.async {
-                self.answerLabel.text = prediction.answer
+                self.answerLabel.text = "Is the answer correct?"
                 self.loaderView.isLoading = false
                 self.say(text: prediction.answer)
             }
